@@ -47,6 +47,20 @@ function tinhDienTichHinhThang(a, b, h) {
 // tinhDienTichHinhThang(4, 5, 6)
 // .then(result => console.log(result))
 // .catch(error => console.log(error));
+// async function tinhDienTich(a, b, h) {
+//     return new Promise(async (resolve, reject) => {
+//         setTimeout(() => reject(new Error('timeout')), 500);
+//         try {
+//             const tong = await congPromise(a, b);
+//             tich = await nhanPromise(tong, h);
+//             const kq = await chiaPromise(tich, 2);
+//             resolve(kq);
+//         } catch(err) {
+//             reject(err);
+//         }
+//     });
+// }
+
 async function tinhDienTich(a, b, h) {
     let tich;
     try {
@@ -59,7 +73,11 @@ async function tinhDienTich(a, b, h) {
     return kq;
 }
 
-tinhDienTich('x', 5, 6)
+// tinhDienTich('x', 5, 6)
+// .then(kq => console.log(kq))
+// .catch(error => console.log(error));
+
+tinhDienTich(4, 5, 6)
 .then(kq => console.log(kq))
 .catch(error => console.log(error));
 
