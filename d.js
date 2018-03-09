@@ -12,6 +12,25 @@ function congPromise(a, b) {
     });
 }
 
-congPromise(4, 5)
-.then(result => console.log(result))
-.catch(error => console.log(error.message));
+function nhanPromise(a, b) {
+    return new Promise((resolve, reject) => {
+        if (isNaN(a) || isNaN(b)) return reject(new Error('Type error.'));
+        request(`${URL}/NHAN/${a}/${b}`, (error, response, body) => {
+            if (error) return reject(error);
+            resolve(body);
+        });
+    });
+}
+
+function chiaPromise(a, b) {
+    return new Promise((resolve, reject) => {
+        if (isNaN(a) || isNaN(b)) return reject(new Error('Type error.'));
+        if (b == 0) return reject(new Error('Divide by zero.'));
+        request(`${URL}/NHAN/${a}/${b}`, (error, response, body) => {
+            if (error) return reject(error);
+            resolve(body);
+        });
+    });
+}
+
+// (4 + 5) * 6 / 2
